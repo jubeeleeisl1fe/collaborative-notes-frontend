@@ -140,3 +140,10 @@ export default function NoteEditor({ noteId = "demo-note" }) {
     </div>
   );
 }
+
+
+
+
+
+
+

@@ -1,11 +1,12 @@
-name: React CI/CD
+name: CI Pipeline (React)
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +24,5 @@ jobs:
       - name: Run tests
         run: npm test -- --watchAll=false
 
-      - name: Build React app
+      - name: Build the project
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: build
